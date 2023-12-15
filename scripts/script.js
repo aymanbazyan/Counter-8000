@@ -34,15 +34,15 @@ let operationType = null;
 // Initial boxes:
 let boxes = [
   {
-    note: "Calories",
+    note: "السعرات الحرارية",
     num: 0,
     id: 1,
     type: "box-long",
     peakNum: 1150,
   },
-  { note: "Protein", num: 0, id: 2, notPeakNum: 183 },
-  { note: "Carbs", num: 0, id: 3, peakNum: 250 },
-  { note: "Fat", num: 0, id: 4, peakNum: 57 },
+  { note: "البروتين", num: 0, id: 2, notPeakNum: 183 },
+  { note: "الكربوهيدرات", num: 0, id: 3, peakNum: 250 },
+  { note: "الدهون", num: 0, id: 4, peakNum: 57 },
 ];
 
 function createNewDay() {

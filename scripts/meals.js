@@ -68,110 +68,109 @@ function closeMealDetails() {
 function changeDetails(id) {
   const meal = meals.find((meal) => meal.id === id);
   currentDetailedMeal = meal;
-
+  console.log(mealDetailsInfo.children);
   mealDetailsInfo.children[0].textContent = meal.name;
-  mealDetailsInfo.children[1].textContent = `السعرات: ${meal.calories}`;
-  mealDetailsInfo.children[2].textContent = `البروتين: ${meal.protein}`;
-  mealDetailsInfo.children[3].textContent = `الكربوهيدرات: ${meal.carbs}`;
-  mealDetailsInfo.children[4].textContent = `السمنة: ${meal.fat}`;
+  mealDetailsInfo.children[1].textContent = meal.description;
+  mealDetailsInfo.children[2].textContent = `السعرات: ${meal.calories}`;
+  mealDetailsInfo.children[3].textContent = `البروتين: ${meal.protein}`;
+  mealDetailsInfo.children[4].textContent = `الكربوهيدرات: ${meal.carbs}`;
+  mealDetailsInfo.children[5].textContent = `الدهون: ${meal.fat}`;
 }
 
 function reloadMeals() {
   if (!meals) return;
   mealsContainerEl.innerHTML = "";
   meals.map((meal) => {
+    // draggable="true"
     const markup = `
-    <div class="meal" id="${meal.id}" draggable="true">
-      <button class="meal-more">
-       المزيد 
-      </button>
+    <div class="meal" id="${meal.id}">
       <div class="meal__info">
         <p>${meal.name}</p>
         <p class="${
           boxes[0].num + +meal.calories > boxes[0].peakNum ? "red" : "green"
         }">${meal.calories}</p>
       </div>
-      <span class="meal-drag">
-        <i class="fa-solid fa-bars"></i>
-      </span>
     </div>
         `;
+    //   <span class="meal-drag">
+    //   <i class="fa-solid fa-bars"></i>
+    // </span>
 
     mealsContainerEl.insertAdjacentHTML("beforeend", markup);
     mealsEl = document.querySelectorAll(".meal");
   });
 
-  mealsEl?.forEach((meal) => {
-    meal.addEventListener("dragstart", () => {
-      meal.classList.add("meal-dragging");
-    });
+  // mealsEl?.forEach((meal) => {
+  //   meal.addEventListener("dragstart", () => {
+  //     meal.classList.add("meal-dragging");
+  //   });
 
-    meal.addEventListener("dragend", () => {
-      meal.classList.remove("meal-dragging");
+  //   meal.addEventListener("dragend", () => {
+  //     meal.classList.remove("meal-dragging");
 
-      // Get all the meal elements
-      const [...children] = mealsContainerEl.children;
+  //     // Get all the meal elements
+  //     const [...children] = mealsContainerEl.children;
 
-      // Create an array to store the sorted meals
-      const sortedMeals = [];
+  //     // Create an array to store the sorted meals
+  //     const sortedMeals = [];
 
-      // Iterate through the meal elements and reorder the meals array
-      children.forEach((child) => {
-        const mealId = child.id;
+  //     // Iterate through the meal elements and reorder the meals array
+  //     children.forEach((child) => {
+  //       const mealId = child.id;
 
-        // Find the meal object in the original array by its id
-        const foundMeal = meals.find((meal) => meal.id === mealId);
+  //       // Find the meal object in the original array by its id
+  //       const foundMeal = meals.find((meal) => meal.id === mealId);
 
-        // Add the found meal to the sortedMeals array
-        if (foundMeal) {
-          sortedMeals.push(foundMeal);
-        }
-      });
+  //       // Add the found meal to the sortedMeals array
+  //       if (foundMeal) {
+  //         sortedMeals.push(foundMeal);
+  //       }
+  //     });
 
-      // Update the meals array with the sortedMeals array
-      meals = sortedMeals;
-      saveLocal("meals", sortedMeals);
-    });
-  });
+  //     // Update the meals array with the sortedMeals array
+  //     meals = sortedMeals;
+  //     saveLocal("meals", sortedMeals);
+  //   });
+  // });
 }
 
-mealsContainerEl.addEventListener("dragover", (e) => {
-  e.preventDefault();
-  const afterElement = getDragAfterEl(mealsContainerEl, e.clientY);
-  const draggable = document.querySelector(".meal-dragging");
+// mealsContainerEl.addEventListener("dragover", (e) => {
+//   e.preventDefault();
+//   const afterElement = getDragAfterEl(mealsContainerEl, e.clientY);
+//   const draggable = document.querySelector(".meal-dragging");
 
-  if (afterElement == null) {
-    mealsContainerEl.appendChild(draggable);
-  } else {
-    mealsContainerEl.insertBefore(draggable, afterElement);
-  }
-});
+//   if (afterElement == null) {
+//     mealsContainerEl.appendChild(draggable);
+//   } else {
+//     mealsContainerEl.insertBefore(draggable, afterElement);
+//   }
+// });
 
-function getDragAfterEl(container, y) {
-  const draggableElements = [
-    ...container.querySelectorAll(".meal:not(.meal-dragging)"),
-  ];
+// function getDragAfterEl(container, y) {
+//   const draggableElements = [
+//     ...container.querySelectorAll(".meal:not(.meal-dragging)"),
+//   ];
 
-  return draggableElements.reduce(
-    (closest, child) => {
-      const box = child.getBoundingClientRect();
-      const offset = y - box.top - box.height / 2;
+//   return draggableElements.reduce(
+//     (closest, child) => {
+//       const box = child.getBoundingClientRect();
+//       const offset = y - box.top - box.height / 2;
 
-      if (offset < 0 && offset > closest.offset) {
-        return { offset, element: child };
-      } else {
-        return closest;
-      }
-    },
-    { offset: Number.NEGATIVE_INFINITY }
-  ).element;
-}
+//       if (offset < 0 && offset > closest.offset) {
+//         return { offset, element: child };
+//       } else {
+//         return closest;
+//       }
+//     },
+//     { offset: Number.NEGATIVE_INFINITY }
+//   ).element;
+// }
 
 function listeners() {
   mealsContainerEl.addEventListener("click", (e) => {
     const target = e.target;
-    if (!target.classList.contains("meal-more")) return;
-
+    console.log(target);
+    // if (!target.classList.contains("meal")) return;
     changeDetails(target.closest(".meal").id);
     openMealDetails();
   });
@@ -215,10 +214,11 @@ function listeners() {
     const newMeal = {
       name: e.target[0].value,
       id: new Date().getTime().toString(),
-      calories: e.target[1].value,
-      protein: e.target[2].value,
-      carbs: e.target[3].value,
-      fat: e.target[4].value,
+      description: e.target[1].value,
+      calories: e.target[2].value,
+      protein: e.target[3].value,
+      carbs: e.target[4].value,
+      fat: e.target[5].value,
     };
     meals.push(newMeal);
     saveLocal("meals", meals);
@@ -232,6 +232,8 @@ function listeners() {
   });
 
   mealDetailsDeleteBtn.addEventListener("click", () => {
+    if (!confirm("Are you sure you want to delete this meal?")) return;
+
     const mealIndex = meals.findIndex(
       (meal) => meal.id === currentDetailedMeal.id
     );

@@ -1,12 +1,30 @@
-.add-meal-btn {
-  font-size: 2rem;
-  color: var(--color-grey-100);
-  background-color: var(--color-green-500);
-  padding: 0 0.5rem;
-  height: 3rem;
-
+header {
   display: flex;
-  gap: 0.5rem;
+  justify-content: end;
+  align-items: center;
+  margin: 1.5rem 1.5rem 1.5rem 0rem;
+}
+
+.add-meal-btn {
+  font-size: 1.8rem;
+  color: var(--color-grey-100);
+  background-color: var(--color-blue-600);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-meal-btn .add-meal-btn__text {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.add-meal-btn .add-meal-btn__icon {
+  font-size: 2.5rem;
+  background-color: var(--color-blue-700);
+  padding: 0.3rem 1.2rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -15,6 +33,7 @@
   max-width: 80rem;
   margin: 0 auto;
   padding: 1rem;
+  padding-top: 0rem;
 
   display: flex;
   gap: 1rem;
@@ -24,56 +43,37 @@
 
 .meal {
   width: 100%;
-  background-color: var(--color-brand-800);
+  background-color: var(--color-grey-700);
+  border-right: 2px solid var(--color-brand-100);
 
   display: flex;
-  /* gap: 10rem; */
   align-items: center;
-}
-
-.meal-more {
-  font-size: 2rem;
-  color: var(--color-brand-100);
-  background-color: var(--color-green-500);
-  margin: 1rem;
-  padding: 0 0.8rem;
 }
 
 .meals .meal__info {
   font-size: 1.8rem;
   color: var(--color-grey-100);
-  background-color: var(--color-brand-800);
-  width: 90%;
-  border-right: 1px solid var(--color-brand-100);
-  padding: 0 1rem;
+  width: 100%;
+  padding: 0rem 1rem;
   text-align: right;
+  direction: rtl;
 }
 
+/*
 .meal-drag {
   font-size: 2.5rem;
   color: var(--color-grey-100);
   width: 15%;
   height: 100%;
-  /* padding-left: 2rem; */
-  /* border-left: 1px solid var(--color-brand-100); */
   cursor: move;
 
   display: flex;
   justify-content: center;
 }
 
-.meal-dragging {
+ .meal-dragging {
   opacity: 0.5;
-}
-
-.add-meal-btn div {
-  height: 100%;
-  border-right: 1px solid var(--color-brand-100);
-  padding-right: 1rem;
-
-  display: flex;
-  align-items: center;
-}
+} */
 
 .add-meal__form {
   position: absolute;
@@ -104,7 +104,8 @@
   text-align: center;
 }
 
-.add-meal__form input {
+.add-meal__form input,
+.add-meal__form textarea {
   font-size: 1.5rem;
   padding: 1.5rem;
   color: var(--color-brand-100);
@@ -112,13 +113,13 @@
   border-top: none;
   border-left: none;
   border-right: none;
-
   outline: none;
   background: none;
+  direction: rtl;
 }
 
-.add-meal__form input::placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+.add-meal__form input::placeholder,
+.add-meal__form textarea::placeholder {
   color: var(--color-grey-400);
   text-align: right;
 }
@@ -132,7 +133,6 @@
 
 .add-meal__form button {
   font-size: 1.5rem;
-  font-family: "IBM Plex Sans Arabic", sans-serif;
   color: var(--color-brand-100);
   transition: all 0.3s;
   padding: 1.3rem;
@@ -162,32 +162,73 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  font-size: 3rem;
   color: white;
   background-color: var(--color-grey-800);
   width: 80%;
   padding: 2rem;
   text-align: right;
+  direction: rtl;
   z-index: 1;
 
   display: flex;
-  gap: 2rem;
   flex-direction: column;
+  gap: 2rem;
 }
 
 .meal-details__info {
+  font-size: 1.5rem;
   display: grid;
   gap: 1rem;
 }
 
+.meal-details__info .meal-details__info-name {
+  font-size: 2.5rem;
+}
+
+.meal-details__info .meal-details__info-desc {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.meal-details__info .meal-details__info-kcal {
+  /*  */
+}
+
+.meal-details__info .meal-details__info-prot {
+  /*  */
+}
+
+.meal-details__info .meal-details__info-carb {
+  /*  */
+}
+
+.meal-details__info .meal-details__info-fat {
+  /*  */
+}
+
 .meal-details__btns {
   display: flex;
-  gap: 1rem;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .meal-details__btns button {
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: white;
+  width: 100%;
+  padding: 1rem 0rem;
+}
+
+.meal-details__btns-eat {
+  background-color: var(--color-blue-600);
+}
+
+.meal-details__btns-cancel {
+  background-color: var(--color-red-700);
+}
+
+.meal-details__btns-delete {
+  border: 1px solid var(--color-brand-100);
 }
