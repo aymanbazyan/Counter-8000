@@ -1,0 +1,193 @@
+.add-meal-btn {
+  font-size: 2rem;
+  color: var(--color-grey-100);
+  background-color: var(--color-green-500);
+  padding: 0 0.5rem;
+  height: 3rem;
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.meals {
+  width: auto;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem;
+
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meal {
+  width: 100%;
+  background-color: var(--color-brand-800);
+
+  display: flex;
+  /* gap: 10rem; */
+  align-items: center;
+}
+
+.meal-more {
+  font-size: 2rem;
+  color: var(--color-brand-100);
+  background-color: var(--color-green-500);
+  margin: 1rem;
+  padding: 0 0.8rem;
+}
+
+.meals .meal__info {
+  font-size: 1.8rem;
+  color: var(--color-grey-100);
+  background-color: var(--color-brand-800);
+  width: 90%;
+  border-right: 1px solid var(--color-brand-100);
+  padding: 0 1rem;
+  text-align: right;
+}
+
+.meal-drag {
+  font-size: 2.5rem;
+  color: var(--color-grey-100);
+  width: 15%;
+  height: 100%;
+  /* padding-left: 2rem; */
+  /* border-left: 1px solid var(--color-brand-100); */
+  cursor: move;
+
+  display: flex;
+  justify-content: center;
+}
+
+.meal-dragging {
+  opacity: 0.5;
+}
+
+.add-meal-btn div {
+  height: 100%;
+  border-right: 1px solid var(--color-brand-100);
+  padding-right: 1rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.add-meal__form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: fit-content;
+  padding: 1rem;
+  background-color: var(--color-grey-800);
+  z-index: 1;
+  text-align: right;
+  border: var(--color-grey-600) 1px solid;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: all 0.2s;
+}
+
+.add-meal__form-title {
+  font-size: 2rem;
+  color: var(--color-grey-100);
+  text-align: center;
+}
+
+.add-meal__form input {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  color: var(--color-brand-100);
+  border-bottom: 1px solid var(--color-brand-100);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  outline: none;
+  background: none;
+}
+
+.add-meal__form input::placeholder {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  color: var(--color-grey-400);
+  text-align: right;
+}
+
+.form-btns {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.add-meal__form button {
+  font-size: 1.5rem;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  color: var(--color-brand-100);
+  transition: all 0.3s;
+  padding: 1.3rem;
+}
+
+.add-meal__form .submit-form {
+  background-color: var(--color-green-500);
+}
+
+.add-meal__form .submit-form:hover,
+.add-meal__form .submit-form:active {
+  background-color: var(--color-green-600);
+}
+
+.add-meal__form .cancel-form {
+  background-color: var(--color-red-700);
+}
+
+.add-meal__form .cancel-form:hover,
+.add-meal__form .cancel-form:active {
+  background-color: var(--color-red-800);
+}
+
+.meal-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 3rem;
+  color: white;
+  background-color: var(--color-grey-800);
+  width: 80%;
+  padding: 2rem;
+  text-align: right;
+  z-index: 1;
+
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.meal-details__info {
+  display: grid;
+  gap: 1rem;
+}
+
+.meal-details__btns {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.meal-details__btns button {
+  font-size: 3rem;
+  color: white;
+}

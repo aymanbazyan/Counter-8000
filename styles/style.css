@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+:root {
+  /* Indigo */
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+
+  /* Grey */
+  --color-grey-0: #fff;
+  --color-grey-50: #f9fafb;
+  --color-grey-100: #f3f4f6;
+  --color-grey-200: #e5e7eb;
+  --color-grey-300: #d1d5db;
+  --color-grey-400: #9ca3af;
+  --color-grey-500: #6b7280;
+  --color-grey-600: #4b5563;
+  --color-grey-700: #374151;
+  --color-grey-800: #1f2937;
+  --color-grey-900: #111827;
+
+  /* Green */
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+
+  /* Red */
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+
+  /* Blue */
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+}
+
+body {
+  background-color: var(--color-grey-800);
+  height: 100dvh;
+  /* padding: 1rem 0; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  position: relative;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body.loading .preloader {
+  display: block;
+}
+
+body.loaded .preloader {
+  display: none;
+}
+
+.preloader {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-grey-900);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* backdrop-filter: blur(3px); */
+  transition: all 0.2s;
+  background-color: var(--color-grey-900);
+  opacity: 0.9;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav {
+  width: auto;
+  max-width: 40rem;
+  margin: 0 auto;
+  /* padding: 1rem; */
+  height: 3.5rem;
+  border-bottom: 1px solid var(--color-grey-600);
+
+  display: flex;
+  /* gap: 3rem; */
+  justify-content: center;
+}
+
+.nav a:link,
+.nav a:visited {
+  font-size: 1.7rem;
+  height: 100%;
+
+  color: var(--color-grey-200);
+  text-decoration: none;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__link-main {
+  /* background-color: var(--color-blue-700); */
+  border-right: 1px solid var(--color-grey-600);
+}
+
+.nav__link-meal {
+  /* background-color: var(--color-brand-800); */
+}
+
+header {
+  padding: 1rem;
+
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.date {
+  font-size: 2rem;
+  color: var(--color-brand-100);
+}
+
+.reset-btn {
+  font-size: 1.6rem;
+  color: var(--color-brand-100);
+  background-color: var(--color-red-700);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+
+  transition: all 0.2s;
+}
+
+.reset-btn:hover,
+.reset-btn:active {
+  background-color: var(--color-red-800);
+}
+
+.boxes {
+  width: auto;
+  max-width: 80rem;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+
+  display: grid;
+  column-gap: 0.8rem;
+  row-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.box {
+  /* background-color: var(--color-brand-700); */
+  height: fit-content;
+  /* border-radius: 8px; */
+  border: var(--color-grey-500) 1px solid;
+  border-bottom: none;
+  /* cursor: pointer; */
+  /* overflow: hidden; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-long {
+  grid-column: span 3;
+}
+
+.box .box__info {
+  font-size: 1.7rem;
+  color: var(--color-grey-200);
+  padding: 1.5rem;
+  text-align: center;
+
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.box .box__info .box__info-number {
+  display: block;
+  font-size: 2.2rem;
+  /* color: gold; */
+}
+
+.green {
+  color: var(--color-green-500);
+}
+
+.red {
+  color: red;
+}
+
+.box .box__calc {
+  width: 100%;
+
+  display: flex;
+}
+
+.box .box__calc .box__calc-plus,
+.box .box__calc .box__calc-minus {
+  font-size: 3rem;
+  color: var(--color-brand-100);
+  transition: all 0.2s;
+  padding-top: 0.3rem;
+
+  flex: 1;
+}
+
+.box .box__calc .box__calc-plus {
+  background-color: var(--color-blue-600);
+}
+
+.box .box__calc .box__calc-plus:hover,
+.box .box__calc .box__calc-plus:active {
+  background-color: var(--color-blue-700);
+}
+
+.box .box__calc .box__calc-minus {
+  background-color: var(--color-red-700);
+}
+
+.box .box__calc .box__calc-minus:hover,
+.box .box__calc .box__calc-minus:active {
+  background-color: var(--color-red-800);
+}
+
+.edit-box-form {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: fit-content;
+  padding: 1rem;
+  background-color: var(--color-grey-800);
+  z-index: 1;
+  border: var(--color-grey-600) 1px solid;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: all 0.2s;
+}
+
+.edit-box-form input {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  color: var(--color-brand-100);
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.edit-box-form input::placeholder {
+  color: var(--color-grey-400);
+}
+
+.form-btns {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.edit-box-form button {
+  font-size: 1.5rem;
+  color: var(--color-brand-100);
+  transition: all 0.3s;
+  padding: 1.3rem;
+}
+
+.edit-box-form .submit-form {
+  background-color: var(--color-green-500);
+}
+
+.edit-box-form .submit-form:hover,
+.edit-box-form .submit-form:active {
+  background-color: var(--color-green-600);
+}
+
+.edit-box-form .cancel-form {
+  background-color: var(--color-red-700);
+}
+
+.edit-box-form .cancel-form:hover,
+.edit-box-form .cancel-form:active {
+  background-color: var(--color-red-800);
+}

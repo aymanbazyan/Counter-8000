@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/content/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script type="module" src="/scripts/script.js"></script>
+    <title>Counter 8000</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="nav__link-main" href="/index.html">الرئيسية</a>
+      <a class="nav__link-meal" href="/meals.html">الوجبات</a>
+    </nav>
+    <!-- <header>
+      <h2 class="date"></h2>
+      <button class="reset-btn">reset</button>
+    </header> -->
+    <main class="boxes"></main>
+
+    <form class="edit-box-form hidden">
+      <input required type="number" min="0" placeholder="Add a value here!" />
+      <div class="form-btns">
+        <button class="submit-form" type="submit">Submit</button>
+        <button class="cancel-form" type="button">Cancel</button>
+      </div>
+    </form>
+    <div class="overlay hidden"></div>
+  </body>
+</html>

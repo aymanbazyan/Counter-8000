@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/115a1d12a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="/content/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/meals.css" />
+    <script defer type="module" src="/scripts/meals.js"></script>
+    <title>Counter 8000</title>
+  </head>
+  <body>
+    <div class="preloader"></div>
+    <nav class="nav">
+      <a class="nav__link-main" href="/index.html">الرئيسية</a>
+      <a class="nav__link-meal" href="/meals.html">الوجبات</a>
+    </nav>
+    <header>
+      <!-- <h2 class="date"></h2>
+      <button class="reset-btn">reset</button> -->
+      <button class="add-meal-btn">
+        <div>
+          <span>إضافة وجبة</span>
+        </div>
+        <span>+</span>
+      </button>
+    </header>
+    <main class="meals"></main>
+
+    <form class="add-meal__form hidden">
+      <p class="add-meal__form-title">أضف وجبة</p>
+      <input required type="text" placeholder="إسم الوجبة" />
+      <input required type="number" placeholder="السعرات" />
+      <input required type="number" placeholder="البروتين" />
+      <input required type="number" placeholder="الكربوهيدرات" />
+      <input required type="number" placeholder="السمنة" />
+      <button class="submit-form" type="submit">تأكيد</button>
+      <button class="cancel-form" type="button">إلغاء</button>
+    </form>
+    <div class="overlay hidden"></div>
+    <div class="meal-details hidden">
+      <div class="meal-details__info">
+        <p>الفول</p>
+        <p>السعرات: 1132</p>
+        <p>البروتين: 1132</p>
+        <p>الكربوهيدرات: 1132</p>
+        <p>السمنة: 1132</p>
+      </div>
+      <div class="meal-details__btns">
+        <button class="meal-details__btns-eat">تناول</button>
+        <button class="meal-details__btns-cancel">إلغاء</button>
+        <button class="meal-details__btns-delete">حذف</button>
+      </div>
+    </div>
+  </body>
+</html>
