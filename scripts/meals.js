@@ -92,9 +92,6 @@ function reloadMeals() {
       </div>
     </div>
         `;
-    //   <span class="meal-drag">
-    //   <i class="fa-solid fa-bars"></i>
-    // </span>
 
     mealsContainerEl.insertAdjacentHTML("beforeend", markup);
     mealsEl = document.querySelectorAll(".meal");

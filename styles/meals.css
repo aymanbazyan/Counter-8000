@@ -190,21 +190,17 @@ header {
   margin-bottom: 1rem;
 }
 
-.meal-details__info .meal-details__info-kcal {
-  /*  */
+/* .meal-details__info .meal-details__info-kcal {
 }
 
 .meal-details__info .meal-details__info-prot {
-  /*  */
 }
 
 .meal-details__info .meal-details__info-carb {
-  /*  */
 }
 
 .meal-details__info .meal-details__info-fat {
-  /*  */
-}
+} */
 
 .meal-details__btns {
   display: flex;
