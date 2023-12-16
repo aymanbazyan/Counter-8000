@@ -244,7 +244,7 @@ button {
 
 .edit-box-form {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -257,9 +257,7 @@ button {
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
   display: flex;
-  gap: 1rem;
   flex-direction: column;
-  justify-content: space-between;
 
   transition: all 0.2s;
 }
@@ -267,6 +265,7 @@ button {
 .edit-box-form input {
   font-size: 1.5rem;
   padding: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--color-brand-100);
   border: none;
   outline: none;
@@ -280,7 +279,6 @@ button {
 .form-btns {
   width: 100%;
   display: flex;
-  gap: 1rem;
   flex-direction: column;
 }
 
@@ -289,6 +287,7 @@ button {
   color: var(--color-brand-100);
   transition: all 0.3s;
   padding: 1.3rem;
+  margin-top: 1rem;
 }
 
 .edit-box-form .submit-form {
