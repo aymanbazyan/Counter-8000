@@ -76,7 +76,7 @@ body.loaded .preloader {
 
 .app {
   position: relative;
-  border: 1px solid red;
+  height: 100vh;
 }
 
 .preloader {
@@ -248,7 +248,7 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: fit-content;
+  /* width: fit-content; */
   padding: 1rem;
   background-color: var(--color-grey-800);
   z-index: 1;
