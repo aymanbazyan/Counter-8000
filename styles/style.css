@@ -265,11 +265,12 @@ button {
 .edit-box-form input {
   font-size: 1.5rem;
   padding: 1.5rem;
-  margin-bottom: 1rem;
   color: var(--color-brand-100);
   border: none;
   outline: none;
   background: none;
+  direction: rtl;
+  text-align: right;
 }
 
 .edit-box-form input::placeholder {
