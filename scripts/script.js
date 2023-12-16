@@ -40,7 +40,7 @@ let boxes = [
     type: "box-long",
     peakNum: 1150,
   },
-  { note: "البروتين", num: 0, id: 2, notPeakNum: 183 },
+  { note: "البروتين", num: 0, id: 2, notPeakNum: 136 },
   { note: "الكربوهيدرات", num: 0, id: 3, peakNum: 250 },
   { note: "الدهون", num: 0, id: 4, peakNum: 57 },
 ];
