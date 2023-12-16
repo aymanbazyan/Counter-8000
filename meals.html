@@ -12,46 +12,48 @@
 </head>
 
 <body>
-  <div class="preloader"></div>
-  <nav class="nav">
-    <a class="nav__link-main" href="index.html">الرئيسية</a>
-    <a class="nav__link-meal" href="meals.html">الوجبات</a>
-  </nav>
-  <header>
-    <!-- <h2 class="date"></h2>
+  <div class="app">
+    <div class="preloader"></div>
+    <nav class="nav">
+      <a class="nav__link-main" href="index.html">الرئيسية</a>
+      <a class="nav__link-meal" href="meals.html">الوجبات</a>
+    </nav>
+    <header>
+      <!-- <h2 class="date"></h2>
       <button class="reset-btn">reset</button> -->
-    <button class="add-meal-btn">
-      <span class="add-meal-btn__text">إضافة وجبة</span>
-      <span class="add-meal-btn__icon">+</span>
-    </button>
-  </header>
-  <main class="meals"></main>
+      <button class="add-meal-btn">
+        <span class="add-meal-btn__text">إضافة وجبة</span>
+        <span class="add-meal-btn__icon">+</span>
+      </button>
+    </header>
+    <main class="meals"></main>
 
-  <form class="add-meal__form hidden">
-    <p class="add-meal__form-title">أضف وجبة</p>
-    <input required type="text" placeholder="إسم الوجبة" />
-    <textarea cols="30" rows="5" placeholder="الوصف"></textarea>
-    <input required type="number" placeholder="السعرات" />
-    <input required type="number" placeholder="البروتين" />
-    <input required type="number" placeholder="الكربوهيدرات" />
-    <input required type="number" placeholder="الدهون" />
-    <button class="submit-form" type="submit">تأكيد</button>
-    <button class="cancel-form" type="button">إلغاء</button>
-  </form>
-  <div class="overlay hidden"></div>
-  <div class="meal-details hidden">
-    <div class="meal-details__info">
-      <p class="meal-details__info-name">الفول</p>
-      <p class="meal-details__info-desc"></p>
-      <p class="meal-details__info-kcal">السعرات: 1132</p>
-      <p class="meal-details__info-prot">البروتين: 1132</p>
-      <p class="meal-details__info-carb">الكربوهيدرات: 1132</p>
-      <p class="meal-details__info-fat">الدهون: 1132</p>
-    </div>
-    <div class="meal-details__btns">
-      <button class="meal-details__btns-eat">تناول</button>
-      <button class="meal-details__btns-cancel">إلغاء</button>
-      <button class="meal-details__btns-delete">حذف</button>
+    <form class="add-meal__form hidden">
+      <p class="add-meal__form-title">أضف وجبة</p>
+      <input required type="text" placeholder="إسم الوجبة" />
+      <textarea cols="30" rows="5" placeholder="الوصف"></textarea>
+      <input required type="number" placeholder="السعرات" />
+      <input required type="number" placeholder="البروتين" />
+      <input required type="number" placeholder="الكربوهيدرات" />
+      <input required type="number" placeholder="الدهون" />
+      <button class="submit-form" type="submit">تأكيد</button>
+      <button class="cancel-form" type="button">إلغاء</button>
+    </form>
+    <div class="overlay hidden"></div>
+    <div class="meal-details hidden">
+      <div class="meal-details__info">
+        <p class="meal-details__info-name">الفول</p>
+        <p class="meal-details__info-desc"></p>
+        <p class="meal-details__info-kcal">السعرات: 1132</p>
+        <p class="meal-details__info-prot">البروتين: 1132</p>
+        <p class="meal-details__info-carb">الكربوهيدرات: 1132</p>
+        <p class="meal-details__info-fat">الدهون: 1132</p>
+      </div>
+      <div class="meal-details__btns">
+        <button class="meal-details__btns-eat">تناول</button>
+        <button class="meal-details__btns-cancel">إلغاء</button>
+        <button class="meal-details__btns-delete">حذف</button>
+      </div>
     </div>
   </div>
 </body>
