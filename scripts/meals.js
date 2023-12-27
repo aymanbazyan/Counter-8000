@@ -87,7 +87,7 @@ function reloadMeals() {
       <div class="meal__info">
         <p>${meal.name}</p>
         <p class="${
-          boxes[0].num + +meal.calories > boxes[0].peakNum ? "red" : "green"
+          "" // boxes[0].num + +meal.calories > boxes[0].peakNum ? "red" : "green"
         }">${meal.calories}</p>
       </div>
     </div>
@@ -226,6 +226,7 @@ function listeners() {
     e.target[2].value = "";
     e.target[3].value = "";
     e.target[4].value = "";
+    e.target[5].value = "";
   });
 
   mealDetailsDeleteBtn.addEventListener("click", () => {

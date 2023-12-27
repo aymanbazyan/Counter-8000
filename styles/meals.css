@@ -162,7 +162,8 @@ header {
 
   color: white;
   background-color: var(--color-grey-800);
-  width: 80%;
+  width: 90%;
+  max-width: 50rem;
   padding: 2rem;
   text-align: right;
   direction: rtl;
@@ -182,14 +183,17 @@ header {
 }
 
 .meal-details__info .meal-details__info-desc {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.9rem;
+  /* margin: 1rem 0; */
+  margin-top: 1rem;
+  margin-bottom: 1.3rem;
 }
 
 .meal-details__info .meal-details__info-kcal,
 .meal-details__info .meal-details__info-prot,
 .meal-details__info .meal-details__info-carb,
 .meal-details__info .meal-details__info-fat {
+  font-size: 1.7rem;
   margin-bottom: 1rem;
 }
 

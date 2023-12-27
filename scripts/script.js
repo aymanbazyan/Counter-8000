@@ -97,14 +97,16 @@ function reloadBoxes() {
               ${box.note}
               </span>
               <span class="box__info-number ${
-                box.num !== 0 &&
-                box.peakNum &&
-                (box.num <= box.peakNum ? "green" : "red")
+                ""
+                // box.num !== 0 &&
+                // box.peakNum &&
+                // (box.num <= box.peakNum ? "green" : "red")
               }
               ${
-                box.num !== 0 &&
-                box.notPeakNum &&
-                (box.num >= box.notPeakNum ? "green" : "red")
+                ""
+                // box.num !== 0 &&
+                // box.notPeakNum &&
+                // (box.num >= box.notPeakNum ? "green" : "red")
               }
               ">
               ${box.num}
