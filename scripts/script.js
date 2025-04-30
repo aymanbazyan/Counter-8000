@@ -60,7 +60,7 @@ function createNewDay() {
 function handleTime() {
   const lastDay = getLocal("lastDay");
   const newDay = createNewDay();
-  // document.querySelector(".date").textContent = newDay;
+  document.querySelector(".date").textContent = newDay;
 
   if (!lastDay) {
     saveLocal("lastDay", newDay);
@@ -97,16 +97,16 @@ function reloadBoxes() {
               ${box.note}
               </span>
               <span class="box__info-number ${
-                ""
-                // box.num !== 0 &&
-                // box.peakNum &&
-                // (box.num <= box.peakNum ? "green" : "red")
+                // ""
+                box.num !== 0 &&
+                box.peakNum &&
+                (box.num <= box.peakNum ? "green" : "red")
               }
               ${
-                ""
-                // box.num !== 0 &&
-                // box.notPeakNum &&
-                // (box.num >= box.notPeakNum ? "green" : "red")
+                // ""
+                box.num !== 0 &&
+                box.notPeakNum &&
+                (box.num >= box.notPeakNum ? "green" : "red")
               }
               ">
               ${box.num}
@@ -129,12 +129,13 @@ function reloadBoxes() {
   });
 }
 
-// function resetHandler() {
-//   document.querySelector(".reset-btn").addEventListener("click", function () {
-//     deleteLocal("boxes");
-//     location.reload();
-//   });
-// }
+function resetHandler() {
+  document.querySelector(".reset-btn").addEventListener("click", function () {
+    if (!confirm("Are you sure?")) return;
+    deleteLocal("boxes");
+    location.reload();
+  });
+}
 
 function openEditForm() {
   editFormEl.classList.remove("hidden");
@@ -179,7 +180,7 @@ function init() {
   }
 
   reloadBoxes();
-  // resetHandler();
+  resetHandler();
 }
 
 document.addEventListener("DOMContentLoaded", init);

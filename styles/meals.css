@@ -76,6 +76,7 @@ header {
 } */
 
 .add-meal__form {
+  height: 90%;
   position: absolute;
   top: 47%;
   left: 50%;
